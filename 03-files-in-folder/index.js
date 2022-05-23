@@ -13,8 +13,6 @@ async function findFiles(dirPath) {
         file = `${name} - ${ext.slice(1)} - ${stats.size/1000}kb`;
         console.log(file);
       });
-    } else {
-      findFiles(path.join(dirPath, asset.name));
     }
   }
 }

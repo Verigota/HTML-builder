@@ -6,7 +6,7 @@ const output = fs.createWriteStream(path.join(__dirname, 'consoleText.txt'));
 
 stdout.write('Enter text\n');
 stdin.on('data', data => {
-  if (data.toString() === 'exit\n'){
+  if (data.toString() === 'exit\n' || data.toString() === 'exit\r\n'){
     process.exit();
   }
   output.write(data);
