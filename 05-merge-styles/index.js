@@ -9,7 +9,7 @@ async function findFiles(dirPath) {
     if (asset.isFile() && path.extname(asset.name) === '.css') {
       const cssFile = fs.createReadStream(path.join(dirPath, asset.name), 'utf-8');
       cssFile.on('data', (chunk) => {
-        bundle.write(chunk);
+        bundle.write(`${chunk}\r`);
       });
     }
   }
