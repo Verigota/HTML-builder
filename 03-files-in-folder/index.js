@@ -10,7 +10,7 @@ async function findFiles(dirPath) {
       const ext = path.extname(asset.name);
       const name = path.basename(asset.name, ext);
       fs.stat(path.join(dirPath, asset.name), (err, stats)=> {
-        file = `${name} - ${ext.slice(1)} - ${stats.size/1000}kb`;
+        file = `${name} - ${ext.slice(1)} - ${stats.size}b`;
         console.log(file);
       });
     }
